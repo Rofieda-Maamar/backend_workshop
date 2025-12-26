@@ -1,0 +1,30 @@
+
+###
+POST   http://127.0.0.1:8000/api/v1/register/ HTTP/1.1 
+Content-Type: application/json 
+
+{
+    "email" : "mr_maamar@esi.dz" , 
+    "password" : "1234" , 
+    "username" : "rofa"
+}
+
+###
+
+POST   http://127.0.0.1:8000/api/v1/token/ HTTP/1.1 
+Content-Type: application/json 
+
+{
+    "password" : "1234" , 
+    "username" : "rofa"
+}
+
+### 
+
+POST   http://127.0.0.1:8000/api/v1/token/refresh/ HTTP/1.1 
+Content-Type: application/json 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY2Nzg2MDA0LCJpYXQiOjE3NjY3ODU3MDQsImp0aSI6IjI3Zjk5MjBlMDg2MjRkOGZhNmM0YzEwYTVjYWZlMWI2IiwidXNlcl9pZCI6IjEifQ.FxQD-xiymzm8JnEcxWPfNPeARy39qBOx7i9H5Db69O4
+
+{
+    "refresh" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2Njg3MjEwNCwiaWF0IjoxNzY2Nzg1NzA0LCJqdGkiOiI1NzQzZjdiNTQzOTY0ZDhmYjYyMzk5MDQwZTVkMDc4OCIsInVzZXJfaWQiOiIxIn0.-defU7bR8iEih2QKkkTEKuCFT-9EA64EhUo7y6LpfKU"
+}
