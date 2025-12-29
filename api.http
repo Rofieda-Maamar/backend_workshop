@@ -17,6 +17,8 @@ Content-Type: application/json
 {
     "password" : "1234" , 
     "username" : "rofa"
+    
+    
 }
 
 ### 
@@ -28,3 +30,47 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiY
 {
     "refresh" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2Njg3MjEwNCwiaWF0IjoxNzY2Nzg1NzA0LCJqdGkiOiI1NzQzZjdiNTQzOTY0ZDhmYjYyMzk5MDQwZTVkMDc4OCIsInVzZXJfaWQiOiIxIn0.-defU7bR8iEih2QKkkTEKuCFT-9EA64EhUo7y6LpfKU"
 }
+
+
+### 
+
+POST   http://127.0.0.1:8000/api/v1/mood/ HTTP/1.1 
+Content-Type: application/json 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY3MDQyMzgzLCJpYXQiOjE3NjcwNDIwODMsImp0aSI6IjAxOTFmYmNlNThhMzRmY2NhOTNlOTU0Nzk4Y2IzMTg2IiwidXNlcl9pZCI6IjEifQ.PLwdndsoLjYPewXr-GxXXCDEjHXbL_9UVqHOiAKQ_ho
+
+{
+    "mood" :  "happy"
+}
+
+
+
+### 
+
+PATCH   http://127.0.0.1:8000/api/v1/mood/update/ HTTP/1.1 
+Content-Type: application/json 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY3MDQzMjgxLCJpYXQiOjE3NjcwNDI5ODEsImp0aSI6IjI1YzZjNDYyNTc5NDRjOTVhYWY2NmNkMTM0ZGU3MDgwIiwidXNlcl9pZCI6IjEifQ.b7hm62bhPf2JIsNIDfUl_lJzcG-z60HGrV4q1z71moo
+
+{
+    "mood" :  "sad"
+}
+
+
+
+
+
+### 
+
+PATCH   http://127.0.0.1:8000/api/v1/mood/view/ HTTP/1.1 
+Content-Type: application/json 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY3MDQzOTU5LCJpYXQiOjE3NjcwNDM2NTksImp0aSI6IjRmYWE3ZjE0OThmNTRkYWFhMjVjNjEyMjdjYzkzM2Y0IiwidXNlcl9pZCI6IjEifQ.Lz64ZBTUQIrQoq72CKag8h4LZri-ieVa6KxKiOesRKo
+
+{
+    "mood" :  "happyh"
+}
+
+### 
+
+GET   http://127.0.0.1:8000/api/v1/mood/search/?date=2025-12-30 HTTP/1.1 
+Content-Type: application/json 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY3MDQ1MTAzLCJpYXQiOjE3NjcwNDQ4MDMsImp0aSI6IjY4MTEwNjg0MTBjNzQ5MTBiMGQ2ZjEyM2ZmMjU3YzAzIiwidXNlcl9pZCI6IjEifQ.SvxPA_syklSVsaRPinrNisIljk69T02EtzDwOhKL1Es
+

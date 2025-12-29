@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 class MoodsSerializer(serializers.ModelSerializer) :
     class Meta : 
         model = Mood 
-        fields = ["mood" , "date"] 
+        fields = "__all__"
 
 
 
