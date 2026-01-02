@@ -7,8 +7,10 @@ from rest_framework.permissions import IsAuthenticated
 from django.utils.timezone import now 
 from rest_framework.generics import get_object_or_404
 from django.utils.dateparse import parse_date
+from django.db.models import Count
 
 from .models import Mood
+from datetime import datetime
 
 # Create your views here.
 
@@ -107,3 +109,47 @@ def mood_by_date(request) :
     return Response(serializer.data , status=status.HTTP_200_OK)
 
 
+
+
+### 
+
+
+@api_view(['GET']) 
+@permission_classes([IsAuthenticated])
+def mood_hostory(request) : 
+    moods= Mood.objects.filter(user=request.user).order_by('-date')
+    serializer = MoodsSerializer(moods , many = True)
+    return Response ( serializer.data , status=status.HTTP_200_OK)
+
+
+
+import calendar
+
+@api_view(['GET']) 
+@permission_classes([IsAuthenticated]) 
+def yearly_month_stats(request) :
+    moods= Mood.objects.filter(user=request.user)
+    current_year = datetime.now().year-1
+    all_moods = ['happy' , 'sad' , 'angry']
+
+    monthly_result={}
+
+    for month in range(1,13) : 
+        moods_in_month = moods.filter(date__year=current_year , date__month= month )
+        stats = moods_in_month.values('mood').annotate(count =Count('mood'))
+        stat_dict = {item['mood'] : item['count'] for item in stats }
+        
+        month_name = calendar.month_name[month]
+
+        month_counts = {} 
+
+        for mood in all_moods : 
+            month_counts[mood]  = stat_dict.get(mood , 0)
+
+        monthly_result[month_name] = month_counts
+
+
+    return Response(monthly_result , status=status.HTTP_200_OK)
+
+
+  

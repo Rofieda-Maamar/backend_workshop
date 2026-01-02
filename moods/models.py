@@ -15,3 +15,5 @@ class Mood(models.Model) :
     mood = models.CharField(choices=MOOD_CHOICES)
     note = models.TextField(blank=True)
     date = models.DateField(auto_now_add=True)
+
+

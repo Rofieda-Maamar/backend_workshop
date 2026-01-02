@@ -16,7 +16,7 @@ Content-Type: application/json
 
 {
     "password" : "1234" , 
-    "username" : "rofa"
+    "username" : "aaaa"
     
     
 }
@@ -46,7 +46,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiY
 
 ### 
 
-PATCH   http://127.0.0.1:8000/api/v1/mood/update/ HTTP/1.1 
+PATCH   http://127.0.0.1:8000/api/v1/mood/stats/ HTTP/1.1 
 Content-Type: application/json 
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY3MDQzMjgxLCJpYXQiOjE3NjcwNDI5ODEsImp0aSI6IjI1YzZjNDYyNTc5NDRjOTVhYWY2NmNkMTM0ZGU3MDgwIiwidXNlcl9pZCI6IjEifQ.b7hm62bhPf2JIsNIDfUl_lJzcG-z60HGrV4q1z71moo
 
@@ -73,4 +73,21 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiY
 GET   http://127.0.0.1:8000/api/v1/mood/search/?date=2025-12-30 HTTP/1.1 
 Content-Type: application/json 
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY3MDQ1MTAzLCJpYXQiOjE3NjcwNDQ4MDMsImp0aSI6IjY4MTEwNjg0MTBjNzQ5MTBiMGQ2ZjEyM2ZmMjU3YzAzIiwidXNlcl9pZCI6IjEifQ.SvxPA_syklSVsaRPinrNisIljk69T02EtzDwOhKL1Es
+
+
+
+### 
+
+GET   http://127.0.0.1:8000/api/v1/mood/history HTTP/1.1 
+Content-Type: application/json 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY3MzYxMDg1LCJpYXQiOjE3NjczMDEwODUsImp0aSI6ImFmNjdmY2Q2ZTM3ZDQyNmQ4NjFlMzYyMWRjOTE4MmNlIiwidXNlcl9pZCI6IjEifQ.KEQfEtC1Rkstz7hbwqSfrUVf7vpCb0tqsHW6txWkFuo
+
+
+
+
+### 
+
+GET   http://127.0.0.1:8000/api/v1/mood/stats/ HTTP/1.1 
+Content-Type: application/json 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY3MzYxMDg1LCJpYXQiOjE3NjczMDEwODUsImp0aSI6ImFmNjdmY2Q2ZTM3ZDQyNmQ4NjFlMzYyMWRjOTE4MmNlIiwidXNlcl9pZCI6IjEifQ.KEQfEtC1Rkstz7hbwqSfrUVf7vpCb0tqsHW6txWkFuo
 
